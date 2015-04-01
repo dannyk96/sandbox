@@ -1,0 +1,8 @@
+*.o
+*.mod
+a.out
+
+# the compiled applications
+snow
+flow
+contour_ps

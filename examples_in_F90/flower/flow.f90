@@ -1,4 +1,3 @@
-
 PROGRAM FLOW_NET_EXAMPLE
 !
 !
@@ -62,15 +61,15 @@ PROGRAM FLOW_NET_EXAMPLE
 !----------------------- solve all the equations --------------------
   ALLOCATE ( HEADS(NN), FLOWS(NN) )
 !  CALL SYSTEM_CLOCK (ITICKS, N_PER_SEC,ITICK_MAX)        ! <--- Yuk!
-!  HEADS(:) = 100.
+!  HEADS(:) = 100.   ! now done insside the solver
    CALL SOLVE_FLOWNET (KP,NUMS, HEADS, FLOWS, INFLOW,OUTFLOW)
 
-!  FLOWS(:) = 123.
+!  FLOWS(:) = 123.   ! now done inside the solver
   CALL CALC_FLOWS (KP, NUMS, HEADS, FLOWS)
 
 
-  PRINT*,' Solution time ='
-  PRINT*,' Number of iterations was ='
+! PRINT*,' Solution time ='
+! PRINT*,' Number of iterations was ='
 
   PRINT*,' Total Inflow  of water =', &
     SUM (FLOWS( INFLOW(:)))*60.*60.*24., 'm^3/day'
