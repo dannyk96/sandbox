@@ -1,7 +1,7 @@
-= A collection of vaarious tools
+* A collection of vaarious tools
 
 
-=== Conteents
+*** Conteents
 
    1 Snow
 
@@ -13,4 +13,6 @@ However this is only as a test case. In Reality it is the prototype driver for e
 
 An f90 test of data structures
 
-
+   3 flow
+   
+Flownet under dams  - used as an Undergraduate teaching example c. 1996   
