@@ -7,7 +7,7 @@
 #
 rm *.o *.mod
 gfortran -c -g segments.f90
-gfortran -c -g plot.f90
+gfortran -cpp -DPGPLOT -c -g plot.f90
 gfortran -c -g snow.f90
 echo 'note that we do not use afront.f90 (in a future release)'
 gfortran -o snow snow.o segments.o plot.o -L$HOME/pgplot -lpgplot -lX11
