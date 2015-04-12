@@ -15,6 +15,7 @@ contains
 
 #ifdef SALFORD
      call vga@()    !- for Salford Fortran's graphics library 
+      graphics_avail = .true.
 #endif
       
 #ifdef PGPLOT
