@@ -14,7 +14,7 @@ contains
       integer pgopen
 
 #ifdef SALFORD
-     call vga@()    - for Salford Fortran's graphics library 
+     call vga@()    !- for Salford Fortran's graphics library 
 #endif
       
 #ifdef PGPLOT
