@@ -17,7 +17,7 @@ echo try this:
 echo 'echo -e "/XWIN\n3\n2\n.4\n3\n\n\n" | ./snow'
 
 # notes on Salfrod FTN95
-# ftn95 segments.f90; ftn95 /CFPP /DEFINE SALFORD  1 plot.f90 ; ftn95 snow.f90 /LINK  
+# ftn95 segments.f90 & ftn95 /CFPP /DEFINE SALFORD  1 plot.f90 & ftn95 snow.f90 /LINK  
 
 
 
