@@ -56,14 +56,16 @@ contains
       enddo
       if (ifail/=0) print*,' failed to set graphics mode'
 
-!     call vga@()      !- last resort ?
-!     call graphics_mode_set@(400,400,16,ifail) !- windows ?
+#ifdef SALFORD
+      call vga@()      !- last resort ?
+      call graphics_mode_set@(400,400,16,ifail) !- windows ?
 
 !------ clear the screen to a given colour ----
-!     CALL SET_PALETTE@   (0,0)
-!     CALL SET_VIDEO_DAC@ (0, 0/4, 10/4, 60/4)    !- background colour
-!     CALL CLEAR_SCREEN_AREA@ (INT(0),INT(0),   &
-!    &                       INT(ixres),INT(iyres),int(0))
+      CALL SET_PALETTE@   (0,0)
+      CALL SET_VIDEO_DAC@ (0, 0/4, 10/4, 60/4)    !- background colour
+      CALL CLEAR_SCREEN_AREA@ (INT(0),INT(0),   &
+     &                       INT(ixres),INT(iyres),int(0))
+#endif
 
       print*,'<> Entering', ixres,'x',iyres,' Video mode'
     end subroutine into_vga_graphics
@@ -79,19 +81,23 @@ contains
     real :: x1,y1,x2,y2
     integer ::icol
     if (.not.graphics_avail) return 
-!   print*,'plot at',ixo+xmag*a%x,iyo+ymag*a%y
-!#ifdef SALFORD
-!   call draw_line@ (nint(ixo+xmag*a%x), nint(iyo+ymag*a%y), &
-!  &                 nint(ixo+xmag*b%x), nint(iyo+ymag*b%y),  icol)
-!#elifdef PGPLOT
+#ifdef DEBUG
+    print*,'plot at',ixo+xmag*a%x,iyo+ymag*a%y
+#endif
+#ifdef SALFORD
+   call draw_line@ (nint(ixo+xmag*a%x), nint(iyo+ymag*a%y), &
+  &                 nint(ixo+xmag*b%x), nint(iyo+ymag*b%y),  icol)
+#elif defined PGPLOT
     x1=ixo+xmag*a%x; y1=iyo+ymag*a%y
     x2=ixo+xmag*b%x; y2=iyo+ymag*b%y
-!   print*, "drawing:", x1,y1, " ->",x2,y2 
+#ifdef DEBUG
+    print*, "drawing:", x1,y1, " ->",x2,y2 
+#endif
 
     call PGSCI  (icol)
     call PGMOVE (x1,y1) 
     call PGDRAW (x2,y2)
-!#endif
+#endif
 
    end subroutine plot_edge 
 
