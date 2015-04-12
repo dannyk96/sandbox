@@ -136,7 +136,7 @@ contains
 !
      integer :: iseg,  ileft,iright, iel,idepth
      type (point) :: p1,p2
-     real dx,dy, len  !,dz
+     real dx,dy, edgelen  !,dz
 ! bug was in teh next line: if iseg is passed as an actual '0' then cant do iseg=foo here!
      if (iseg==0) then                   !- auto fill the next hole
        iseg = ihole
@@ -169,9 +169,9 @@ contains
 !- for 3d get 2 edge vectors :
 !    then cross-product to get the normal unit vector and area :-)
 !    norm() = (/ dx3*dy2-dx2*dy3, dx1*dy3-dx3*dy1,dx2*dy1-dx1*dy2 /)
-     len = sqrt( dx*dx + dy*dy)              !- cf a 3d area.
-     if (len.lt.1.e-20) stop 'zero edge length detected'
-     front(iseg)%len = len
+     edgelen = sqrt( dx*dx + dy*dy)              !- cf a 3d area.
+     if (edgelen.lt.1.e-20) stop 'zero edge length detected'
+     front(iseg)%len = edgelen
 
 !- really for a line the normal is the dot-product of (dx,dy,0) with (0,0,1)
 !- *then* scale to a unit vector.
@@ -311,13 +311,13 @@ contains
 !
      implicit none
      integer :: nfronts
-     integer:: isize,ibase,imark,idepth
+     integer:: ibase,imark,idepth
 
      nfronts=0             !- assume none yet
      imark = -1            !- duumy to trip on the first pass
      do ibase=1,lfront     !- loop all possible base segments
        if (front(ibase)%mark == imark) cycle  !- already been done
-       isize=front_size (ibase,imark,idepth)
+!      isize=front_size (ibase,imark,idepth)
        nfronts = nfronts+1
      enddo
      end function no_of_fronts
@@ -358,7 +358,7 @@ contains
       integer, intent(out) :: iseg    !- the returned segment
       integer, intent(out) :: imark   !- the mark it was given
       integer, intent(out) :: idepth  !- 'depth' from base segment
-      integer :: iseg2,isize,level,i
+      integer :: iseg2,level,i
       integer :: ipush     !- current stack end
       integer :: ipop      !- current stack base
 

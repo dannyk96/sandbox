@@ -12,8 +12,12 @@ contains
 !   this enters graphics mode using the PGPLOT library 
 !
       integer pgopen
-!     call vga@()    - for Salford Fortran's graphics library 
+
+#ifdef SALFORD
+     call vga@()    - for Salford Fortran's graphics library 
+#endif
       
+#ifdef PGPLOT
       ipgstat=  pgopen ('?')
 !     ipgstat=  pgopen ('/XWIN')
 !     ipgstat=  pgopen ('/XTERM')
@@ -23,6 +27,7 @@ contains
         return
       endif
       call pgenv (0.,640., 0.,480.,0,1)
+#endif
 
    end subroutine into_graphics 
 !-----------------------------------------------------------------------
