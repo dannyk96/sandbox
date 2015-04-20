@@ -1,11 +1,11 @@
 <script>
   $(document).ready(function () {
-    $("article table").addClass("table table-condensed table-bordered table-hover");
+    $("article table").addClass("table table-condensed table-bordered table-striped");
   });
 </script>
 
-## A collection of various tools
-
+A collection of various tools
+=============================
   Program |  Description 
 |-----------------|---|
 | Snow | _Snowflake fractals_ |
