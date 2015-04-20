@@ -8,6 +8,16 @@
 
 #### Conteents
 
+#####    6     *NULL_ARRAYS.
+~~~
+Storage at Gauss points =  8 *     128 GP's  =     0.004 Mb
+Storage at Nodal points = 12 *     121 Nodes =     0.011 Mb
+~~~   
+#####    7     *MAT_PROPS.
+     1    model=2   E=1.e5  v=0.3  C=100.
+     2    model=2   E=1.e5  v=0.3  C=100.    sprint=1
+
+
     1 Snow
 
 This F90 program will generate a variety of line-fractals including the famous von-Koch Snowflake Curve.
