@@ -10,8 +10,22 @@ A collection of various tools
 | Snow | _Snowflake fractals_ |
 | Flow | _Flownet under a dam_ |
 
+Contact details 
+---------------
+  :house: https://gitub.com/dannyk96
+  :e-mail: daniel.kidger@gmail.com
+:uk: Unitied Kingdom   
 Roses are red 
 Violets are blue
+
+*   A list item with a blockquote:
+
+    > This is a blockquote
+    > inside a list item.
+    
+* previously
+ *  Once
+  * upon a time
 
 - [ ]  today
 - [ ] tomorrow 
