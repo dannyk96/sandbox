@@ -1,9 +1,7 @@
-<script>
-  $(document).ready(function () {
-    $("article table").addClass("table table-condensed table-bordered table-striped");
-  });
-</script>
-[TOC}
+
+[TOC]
+
+:boom:
 
 A collection of various tools
 =============================
