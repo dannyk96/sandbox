@@ -10,7 +10,7 @@ program magic_name
 !   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
     implicit none
-    character name*70                 !- (70 letters-long should be enough?)
+    character*70 name                 !- (70 letters-long should be enough?)
     integer i,j,ln                    !- ln= length of users name
 
     print*,'Please type in your name (forename and surname)'
