@@ -1,7 +1,11 @@
 Program Ruritania_Stamps
 !
-!  This solves the 'Ruritania Postage Stamps' problem
+!  This solves the 'Ruritania 3 Postage Stamps' problem
+!   eg for 6 stamps, solution is: 1 - 3 - 7 - 9 - 19 - 24  (giving 53 as the fits total that cannot be acheived)
 !
+! 2018-12-14 . "Ruritania" is perhaps an IMS naming?
+!               https://en.wikipedia.org/wiki/Postage_stamp_problem
+!               https://www.braingle.com/brainteasers/15297/exact-postage-with-three-stamps.html
 
 
 !  integer, parameter :: n=7     !/* number of different stamps */
