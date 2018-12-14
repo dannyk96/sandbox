@@ -5,6 +5,7 @@ Program Ruritania_Stamps
 !
 ! 2018-12-14 . "Ruritania" is perhaps an IMS naming?
 !               https://en.wikipedia.org/wiki/Postage_stamp_problem
+!               https://arxiv.org/abs/math/0112257 .    Acaedmic paper shoing that it is np-hard.
 !               https://www.braingle.com/brainteasers/15297/exact-postage-with-three-stamps.html
 
 
